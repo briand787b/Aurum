@@ -20,7 +20,7 @@ try {
 			console.log(hostname + " has no transfer role, now exiting...");
 			// figure out how to not do anything, while still being compatible with below cases
 			// probably will return the location to which th backups should be sent
-			return user + "/dev/null";
+			return user + "@" + hostname + ":/dev/null";
  		case "trans-network-receiver":
 			console.log(hostname + " will now deposit backups to final storage...");
 			console.log(config["storage"]["main"]["location"]);

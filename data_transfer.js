@@ -5,7 +5,7 @@
 
 // preliminary check to make sure that valid number of args were passed
 if (process.argv.length != 4) {
-	console.error("Incorrect number of arguments passed");
+	console.log("Incorrect number of arguments passed");
 	console.log("unrecoverable error, exiting...");
 	throw "unrecoverable error, now exiting...";
 }

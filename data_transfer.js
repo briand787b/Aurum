@@ -17,16 +17,19 @@ var user = process.argv[3];
 try {
 	switch(config["servers"][hostname]["role"]) {
 		case "none":
-			// probably will return the location to which th backups should be sent
+			// returns the location to which the backups should be sent within the network
 			var domain = config["servers"][hostname]["domain"];
 			console.log(config["domains"][domain]["user"] + "@" + config["domains"][domain]["network manager"] + ".local" + ":Backups/servers/");
  			break;
 		case "trans-network-receiver":
-			console.log(hostname + " will now deposit backups to final storage...");
+			// returns the local directory to which the backups should be deposited.
+			// This is the final point of transfer for backups
 			console.log(config["storage"]["main"]["location"]);
 			break;
 	 	case "trans-network-sender":
-		console.log(hostname + " will now send backups to remote storage network(s)...");
+			// returns the user@domain to which the files should be sent over the network
+			// This step requires that the hosts file has correct mapping of domains to ip addresses
+			console.log(config["domains"]["home"]["user"] + "@" + config["domains"]["home"]["network manager"] + ":Backups/servers/");
 	 		break;
 	 	default:
  			console.log("Unexpected result from parsing of configuration.json. \n Terminating program...");

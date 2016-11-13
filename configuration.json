@@ -1,0 +1,52 @@
+{
+	"servers":
+		{
+			"ancalagon": {
+					"role": "none",
+					"domain": "mdsi",
+					"user": "brian"
+				},
+			"crichton": {
+					"role": "none",
+					"domain": "mdsi",
+					"user": "brian"
+				},
+			"ethereal": {
+					"role": "none",
+					"domain": "mdsi",
+					"user": "brian"
+				},
+			"shittypc": {
+					"role": "trans-network-sender",
+					"domain": "mdsi",
+					"user": "brian"
+				},
+			"raspberrypi1": {
+					"role": "trans-network-receiver",
+					"domain": "home",
+					"user": "pi"
+				},
+			"pihole": {
+					"role": "none",
+					"domain": "home",
+					"user": "pi"
+				}
+		},
+	"domains":
+		{
+			"home": {
+					"network manager": "raspberrypi1"
+				},
+			"mdsi": {
+					"network manager": "shittypc"
+				}
+		},
+	"storage":
+		{
+			"main": {
+					"server": "raspberrypi1",
+					"location": "/media/pi/Transcend",
+					"capacity": "32"
+				}
+		}
+}

@@ -17,11 +17,11 @@ var user = process.argv[3];
 try {
 	switch(config["servers"][hostname]["role"]) {
 		case "none":
-			console.log(hostname + " has no transfer role, now exiting...");
 			// probably will return the location to which th backups should be sent
 			var domain = config["servers"][hostname]["domain"];
-			return config["domains"][domain]["user"] + "@" + config["domains"][domain]["network manager"] + ":Backups/servers/";
- 		case "trans-network-receiver":
+			console.log(config["domains"][domain]["user"] + "@" + config["domains"][domain]["network manager"] + ".local" + ":Backups/servers/");
+ 			break;
+		case "trans-network-receiver":
 			console.log(hostname + " will now deposit backups to final storage...");
 			console.log(config["storage"]["main"]["location"]);
 			break;

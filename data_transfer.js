@@ -29,7 +29,7 @@ try {
 	 	case "trans-network-sender":
 			// returns the user@domain to which the files should be sent over the network
 			// This step requires that the hosts file has correct mapping of domains to ip addresses
-			console.log(config["domains"]["home"]["user"] + "@" + config["domains"]["home"]["network manager"] + ":Backups/servers/");
+			console.log(config["domains"]["home"]["user"] + "@" + config["storage"]["main"]["domain"] + ":Backups/servers/");
 	 		break;
 	 	default:
  			console.log("Unexpected result from parsing of configuration.json. \n Terminating program...");

@@ -20,7 +20,7 @@ try {
 			console.log(hostname + " has no transfer role, now exiting...");
 			// probably will return the location to which th backups should be sent
 			var domain = config["servers"][hostname]["domain"];
-			return;
+			return config["domains"][domain]["user"] + "@" + config["domains"][domain]["network manager"] + ":Backups/servers/";
  		case "trans-network-receiver":
 			console.log(hostname + " will now deposit backups to final storage...");
 			console.log(config["storage"]["main"]["location"]);
@@ -38,35 +38,3 @@ catch (e) {
 	console.log("Exiting program due to unrecoverable errors...");
 	return;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-process.argv.forEach(function (val, index, array) {
-	console.log(index + ': ' + val);
-});
-
-

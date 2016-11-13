@@ -8,4 +8,6 @@ tar czvf ~/Backups/servers/${HOSTNAME}.tar.gz ~
 echo "Resolving role in backup process... Consulting configuration files: data_transfer.js"
 ENDPOINT=`./data_transfer.js $HOSTNAME $USER`
 
-echo $ENDPOINT
+echo This is the endpoint: $ENDPOINT
+
+echo "This is the end of the bash script"

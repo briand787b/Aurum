@@ -4,7 +4,7 @@
 // parse JSON with bash.
 
 // preliminary check to make sure that valid number of args were passed
-if (process.argv.length != 3) {
+if (process.argv.length != 4) {
 	console.error("Incorrect number of arguments passed");
 	console.log("unrecoverable error, exiting...");
 	throw "unrecoverable error, now exiting...";
@@ -12,13 +12,15 @@ if (process.argv.length != 3) {
 
 var config = require('./configuration.json');
 var hostname = process.argv[2];
+var user = process.argv[3];
 
 try {
 	switch(config["servers"][hostname]["role"]) {
 		case "none":
 			console.log(hostname + " has no transfer role, now exiting...");
 			// figure out how to not do anything, while still being compatible with below cases
-			return "/dev/null";
+			// probably will return the location to which th backups should be sent
+			return user + "/dev/null";
  		case "trans-network-receiver":
 			console.log(hostname + " will now deposit backups to final storage...");
 			console.log(config["storage"]["main"]["location"]);

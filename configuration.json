@@ -16,7 +16,7 @@
 					"domain": "mdsi",
 					"user": "brian"
 				},
-			"shittypc": {
+			"glaurung": {
 					"role": "trans-network-sender",
 					"domain": "mdsi",
 					"user": "brian"
@@ -39,7 +39,7 @@
 					"user": "pi"
 				},
 			"mdsi": {
-					"network manager": "shittypc",
+					"network manager": "glaurung",
 					"user": "brian"
 				}
 		},
